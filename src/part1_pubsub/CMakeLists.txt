@@ -24,6 +24,7 @@ install(PROGRAMS
   scripts/basic_velocity_control.py
   scripts/stop_me.py
   scripts/publisher.py
+  scripts/subscriber.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
