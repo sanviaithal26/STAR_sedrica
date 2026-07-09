@@ -30,6 +30,8 @@ install(PROGRAMS
   scripts/stop_me.py
   scripts/publisher.py
   scripts/subscriber.py
+  scripts/custom_msg_publisher.py
+  scripts/custom_msg_subscriber.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
