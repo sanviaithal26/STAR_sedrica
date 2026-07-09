@@ -1,0 +1,7 @@
+# ROS 2 generated build artifacts
+build/
+install/
+log/
+# Python caches
+__pycache__/
+*.pyc
