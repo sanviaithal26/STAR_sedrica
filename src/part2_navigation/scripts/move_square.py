@@ -7,7 +7,7 @@ from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry 
 
 from part2_navigation_modules.tb3_tools import quaternion_to_euler 
-from math import sqrt, pow, pi 
+from math import sqrt, pow, pi, sin, cos, atan2
 
 class Square(Node):
 
@@ -62,7 +62,7 @@ class Square(Node):
 
         self.x = pose.position.x 
         self.y = pose.position.y
-        self.theta_z = abs(yaw) # abs(yaw) makes life much easier!!
+        self.theta_z = yaw # abs(yaw) makes life much easier!!
 
         if not self.first_message: 
             self.first_message = True
@@ -76,9 +76,10 @@ class Square(Node):
         # dimensions 1 x 1m...
         if self.turn:
             # turn by 90 degrees...
-            yaw_diff = abs(self.theta_z - self.theta_zref)
+            yaw_diff = self.theta_z - self.theta_zref
+            degrees_turned = abs(atan2(sin(yaw_diff), cos(yaw_diff)))
             
-            if yaw_diff < (pi / 2.0):
+            if degrees_turned < (pi / 2.0):
                 self.vel_msg.linear.x = 0.0
                 self.vel_msg.angular.z = 0.3
             else:
