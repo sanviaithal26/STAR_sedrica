@@ -24,6 +24,7 @@ install(PROGRAMS
   scripts/basic_velocity_control.py
   scripts/stop_me.py
   scripts/param_circle.py
+  scripts/lidar_subscriber.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
