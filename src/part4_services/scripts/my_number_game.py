@@ -34,7 +34,7 @@ class NumberGameService(Node):
         success = False
         hint = ""
         self.num_guesses += 1
-        response.guesses = self.num_guesses
+        response.num_guesses = self.num_guesses
         guess = int(request.guess)
         if guess < 0 or guess > 100:
             hint = "Error"
@@ -51,7 +51,7 @@ class NumberGameService(Node):
             hint = "Lower"
 
         response.hint = hint
-        response.success = success
+        response.correct = success
         
         return response
 
